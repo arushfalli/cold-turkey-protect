@@ -18,15 +18,15 @@ Write-Host ""
 # --- Check admin ---
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")
 if (-not $isAdmin) {
-    Write-Fail "Dit script moet als Administrator worden uitgevoerd."
-    Write-Host "  Rechtsklik op 'Uitvoeren als administrator' en probeer opnieuw." -ForegroundColor Yellow
+    Write-Fail "This script must be run as Administrator."
+    Write-Host "  Right-click the file and select 'Run as administrator'." -ForegroundColor Yellow
     Write-Host ""
-    Read-Host "  Druk op Enter om af te sluiten"
+    Read-Host "  Press Enter to exit"
     exit 1
 }
 
 # --- Find Cold Turkey ---
-Write-Status "Cold Turkey zoeken..."
+Write-Status "Looking for Cold Turkey..."
 
 $installPath = $null
 $commonPaths = @(
@@ -41,40 +41,40 @@ foreach ($p in $commonPaths) {
 }
 
 if (-not $installPath) {
-    Write-Fail "Cold Turkey niet gevonden. Is het geinstalleerd?"
+    Write-Fail "Cold Turkey not found. Is it installed?"
     Write-Host ""
-    Read-Host "  Druk op Enter om af te sluiten"
+    Read-Host "  Press Enter to exit"
     exit 1
 }
 
-Write-OK "Gevonden op: $installPath"
+Write-OK "Found at: $installPath"
 Write-Host ""
 
-# --- 1. Blokkeer verwijderen van de installatiemap ---
-Write-Status "Beschermen: Cold Turkey map (verwijderen blokkeren)..."
+# --- 1. Block deletion of the installation folder ---
+Write-Status "Protecting: Cold Turkey folder (blocking deletion)..."
 try {
     icacls $installPath /deny "Everyone:(D,DC)" /T /Q | Out-Null
-    Write-OK "Map is nu beveiligd tegen verwijdering."
+    Write-OK "Folder is now protected against deletion."
 } catch {
-    Write-Fail "Kon map niet beveiligen: $_"
+    Write-Fail "Could not protect folder: $_"
 }
 
-# --- 2. Blokkeer uitvoering uninstaller ---
+# --- 2. Block execution of the uninstaller ---
 $uninstaller = "$installPath\unins000.exe"
 if (Test-Path $uninstaller) {
-    Write-Status "Beschermen: uninstaller blokkeren..."
+    Write-Status "Protecting: blocking uninstaller..."
     try {
         icacls $uninstaller /deny "Everyone:(X)" /Q | Out-Null
-        Write-OK "Uninstaller is geblokkeerd."
+        Write-OK "Uninstaller is blocked."
     } catch {
-        Write-Fail "Kon uninstaller niet blokkeren: $_"
+        Write-Fail "Could not block uninstaller: $_"
     }
 } else {
-    Write-Warn "Uninstaller niet gevonden (overgeslagen)."
+    Write-Warn "Uninstaller not found (skipped)."
 }
 
-# --- 3. Zoek en blokkeer removal tools op schijf ---
-Write-Status "Zoeken naar Cold Turkey Removal Tools..."
+# --- 3. Find and block removal tools on disk ---
+Write-Status "Searching for Cold Turkey Removal Tools..."
 
 $searchLocations = @(
     "$env:USERPROFILE\Downloads",
@@ -90,25 +90,25 @@ foreach ($loc in $searchLocations) {
     foreach ($tool in $tools) {
         try {
             icacls $tool.FullName /deny "Everyone:(X)" /Q | Out-Null
-            Write-OK "Geblokkeerd: $($tool.Name)"
+            Write-OK "Blocked: $($tool.Name)"
             $blocked++
         } catch {
-            Write-Warn "Kon niet blokkeren: $($tool.Name)"
+            Write-Warn "Could not block: $($tool.Name)"
         }
     }
 }
 
 if ($blocked -eq 0) {
-    Write-OK "Geen removal tools gevonden op bekende locaties."
+    Write-OK "No removal tools found in common locations."
 }
 
-# --- Klaar ---
+# --- Done ---
 Write-Host ""
 Write-Host "==============================" -ForegroundColor Green
-Write-Host "   Bescherming actief!        " -ForegroundColor Green
+Write-Host "   Protection active!         " -ForegroundColor Green
 Write-Host "==============================" -ForegroundColor Green
 Write-Host ""
-Write-Host "  Cold Turkey kan nu niet meer worden verwijderd." -ForegroundColor White
-Write-Host "  Veel succes!" -ForegroundColor White
+Write-Host "  Cold Turkey can no longer be uninstalled." -ForegroundColor White
+Write-Host "  Good luck!" -ForegroundColor White
 Write-Host ""
-Read-Host "  Druk op Enter om af te sluiten"
+Read-Host "  Press Enter to exit"

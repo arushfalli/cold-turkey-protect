@@ -3,7 +3,7 @@
 **Prevent Cold Turkey from being uninstalled, removed, or bypassed.**  
 Free, open-source, one-click tool for Windows.
 
-[![Download](https://img.shields.io/badge/Download-UITVOEREN.bat-blue?style=for-the-badge)](https://github.com/LiveMadEasy/cold-turkey-protect/raw/main/UITVOEREN.bat)
+[![Download](https://img.shields.io/badge/Download-RUN.bat-blue?style=for-the-badge)](https://github.com/LiveMadEasy/cold-turkey-protect/raw/main/RUN.bat)
 
 ---
 
@@ -30,7 +30,7 @@ One moment of weakness, one Google search for "cold turkey removal tool", and it
 ## How to use
 
 **1.** Click the download button above (or clone this repo)  
-**2.** Double-click `UITVOEREN.bat`  
+**2.** Double-click `RUN.bat`  
 **3.** Click **Yes** on the admin prompt  
 **4.** Done — Cold Turkey is now permanently protected
 
