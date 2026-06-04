@@ -3,7 +3,7 @@
 **Prevent Cold Turkey from being uninstalled, removed, or bypassed.**  
 Free, open-source, one-click tool for Windows.
 
-[![Download](https://img.shields.io/badge/Download-RUN.bat-blue?style=for-the-badge)](https://github.com/LiveMadEasy/cold-turkey-protect/raw/main/RUN.bat)
+[![Download](https://img.shields.io/badge/Download-RUN.bat-blue?style=for-the-badge)](https://github.com/arushfalli/cold-turkey-protect/raw/main/RUN.bat)
 
 ---
 
@@ -62,7 +62,7 @@ Run the tool again and it will block any new Removal Tools it finds in your Down
 Blocking apps only work if you can't easily remove them.  
 This tool makes Cold Turkey stick — so you can actually follow through on your goals.
 
-Made with ❤️ by [LiveMadEasy](https://livemadeasy.com) — free, forever.
+Free, forever.
 
 ---
 
