@@ -1,53 +1,71 @@
-# Cold Turkey Protect
+# Cold Turkey Protect — Uninstall Protection Tool
 
-**Bescherm je Cold Turkey installatie tegen verwijdering.**
+**Prevent Cold Turkey from being uninstalled, removed, or bypassed.**  
+Free, open-source, one-click tool for Windows.
 
-Gemaakt door [LiveMadEasy](https://livemadeasy.myshopify.com) — gratis, voor iedereen.
-
----
-
-## Wat doet dit?
-
-Dit script past Windows bestandspermissies aan zodat Cold Turkey **niet meer verwijderd kan worden** — ook niet met de officiële Removal Tool.
-
-- Blokkeert de Cold Turkey uninstaller
-- Blokkeert bekende Removal Tools in Downloads/Desktop
-- Beschermt de installatiemap tegen verwijdering
-
-> Cold Turkey zelf blijft gewoon werken. Je kunt nog steeds websites blokkeren en instellingen aanpassen.
+[![Download](https://img.shields.io/badge/Download-UITVOEREN.bat-blue?style=for-the-badge)](https://github.com/LiveMadEasy/cold-turkey-protect/raw/main/UITVOEREN.bat)
 
 ---
 
-## Hoe gebruiken?
+## The problem
 
-**1.** Download of clone deze repo  
-**2.** Dubbelklik op `UITVOEREN.bat`  
-**3.** Klik op "Ja" bij de UAC prompt (beheerdersrechten nodig)  
-**4.** Klaar!
+Cold Turkey is one of the best website blockers — but it's too easy to undo.  
+One moment of weakness, one Google search for "cold turkey removal tool", and it's gone.
 
----
-
-## Vereisten
-
-- Windows 10 of 11
-- Cold Turkey geïnstalleerd
-- Beheerdersrechten (het script vraagt hier automatisch om)
+**This tool fixes that.**
 
 ---
 
-## Veelgestelde vragen
+## What it does
 
-**Kan ik Cold Turkey nog gewoon gebruiken?**  
-Ja. Alleen de verwijdering is geblokkeerd.
+- Blocks the **Cold Turkey Blocker Removal Tool** from running
+- Blocks the **Cold Turkey uninstaller** (`unins000.exe`)
+- Locks the **installation folder** so files can't be deleted
+- Works even if you download a new Removal Tool later
 
-**Wat als ik het toch wil terugdraaien?**  
-Dat kan, maar vereist handmatige stappen via de command prompt als administrator.
-
-**Werkt dit met Cold Turkey Pro?**  
-Ja.
+> Cold Turkey itself keeps working normally. You can still block sites and change settings — you just can't uninstall it anymore.
 
 ---
 
-## Licentie
+## How to use
 
-MIT — gebruik vrij, deel gerust.
+**1.** Click the download button above (or clone this repo)  
+**2.** Double-click `UITVOEREN.bat`  
+**3.** Click **Yes** on the admin prompt  
+**4.** Done — Cold Turkey is now permanently protected
+
+No technical knowledge required.
+
+---
+
+## FAQ
+
+**Does Cold Turkey still work after running this?**  
+Yes. Blocking, schedules, and settings all work normally.
+
+**Can I still undo this if I really want to?**  
+Yes, but it requires deliberate steps via an admin command prompt — there's no one-click undo. That's the point.
+
+**Does this work with Cold Turkey Pro?**  
+Yes.
+
+**Will this break Windows Updates?**  
+No. It only affects Cold Turkey's own files.
+
+**I downloaded a new Removal Tool — is it blocked?**  
+Run the tool again and it will block any new Removal Tools it finds in your Downloads and Desktop folders.
+
+---
+
+## Why this exists
+
+Blocking apps only work if you can't easily remove them.  
+This tool makes Cold Turkey stick — so you can actually follow through on your goals.
+
+Made with ❤️ by [LiveMadEasy](https://livemadeasy.com) — free, forever.
+
+---
+
+## Keywords
+
+`cold turkey uninstall protection` · `block cold turkey removal tool` · `prevent cold turkey uninstall` · `cold turkey permanent` · `cold turkey removal tool blocked` · `cold turkey cant uninstall` · `cold turkey protection windows` · `website blocker protection` · `cold turkey lock` · `stop cold turkey removal`
