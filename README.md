@@ -3,7 +3,7 @@
 **Prevent Cold Turkey from being uninstalled, removed, or bypassed.**  
 Free, open-source, one-click tool for Windows.
 
-[![Download](https://img.shields.io/badge/Download-RUN.bat-blue?style=for-the-badge)](https://github.com/arushfalli/cold-turkey-protect/raw/main/RUN.bat)
+[![Download](https://img.shields.io/badge/Download-ZIP-blue?style=for-the-badge)](https://github.com/arushfalli/cold-turkey-protect/archive/refs/heads/main.zip)
 
 ---
 
